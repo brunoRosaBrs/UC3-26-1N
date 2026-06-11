@@ -1,0 +1,32 @@
+CREATE TABLE turmas (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR (10) NOT NULL
+);
+
+CREATE TABLE alunos (
+	id SERIAL PRIMARY KEY, 
+	nome VARCHAR (50) NOT NULL, 
+	email VARCHAR (50) NOT NULL UNIQUE,
+	id_turma INT NOT NULL,
+	FOREIGN KEY (id_turma)
+	REFERENCES turmas (id)
+);
+
+CREATE TABLE professor (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR (50) NOT NULL,
+	email VARCHAR (50) UNIQUE NOT NULL,
+	especialidade VARCHAR (30) NOT NULL
+);
+
+CREATE TABLE disciplina (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR (50) NOT NULL,
+	carga_horaria INT NOT NULL
+);
+
+CREATE TABLE curso (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR (50) NOT NULL,
+	descricao VARCHAR (100) NOT NULL
+);
