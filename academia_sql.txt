@@ -1,0 +1,21 @@
+CREATE TABLE instrutor (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR (50) NOT NULL,
+	cref VARCHAR (11) NOT NULL UNIQUE
+);
+
+CREATE TABLE aluno (
+	id SERIAL PRIMARY KEY,
+	nome_aluno VARCHAR (50) NOT NULL
+);
+
+CREATE TABLE treino (
+	id SERIAL PRIMARY KEY,
+	nome_treino VARCHAR (50) NOT NULL,
+	id_aluno INT NOT NULL,
+	FOREIGN KEY (id_aluno)
+	REFERENCES aluno (id),
+	id_instrutor INT NOT NULL, 
+	FOREIGN KEY (id_instrutor)
+	REFERENCES instrutor (id)
+);
