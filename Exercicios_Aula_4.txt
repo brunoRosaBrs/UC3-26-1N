@@ -1,0 +1,135 @@
+**Exercicio 1:** 
+
+CREATE TABLE professores (
+
+id SERIAL PRIMARY KEY,
+
+nome VARCHAR(50) NOT NULL
+
+email VARCHAR(100) NOT NULL UNIQUE
+
+);
+
+INSERT INTO professores (nome, email)
+VALUES
+('PROF1', 'prof1@email.com'),
+('PROF2', 'prof2@email.com'),
+('PROF3', 'prof3@email.com'),
+('PROF4', 'prof4@email.com'),
+('PROF5', 'prof5@email.com');
+
+```
+SELECT * FROM professores
+```
+
+
+
+
+**Exercicio 2:** 
+
+CREATE TABLE disciplinas (
+id SERIAL PRIMARY KEY,
+nome VARCHAR (50) NOT NULL
+
+);
+
+INSERT INTO disciplinas (nome)
+VALUES
+('matematica'),
+('portugues'),
+('ingles'),
+('historia'),
+('geografia');
+
+SELECT nome FROM disciplinas;
+
+
+
+
+
+**Exercicio 3:**
+
+CREATE TABLE curso (
+id SERIAL PRIMARY KEY,
+nome VARCHAR (50) NOT NULL
+);
+
+INSERT INTO curso (nome)
+VALUES
+('TDS'),
+('ADS'),
+('CIENCIA DE DADOS');
+
+CREATE TABLE turmas(
+
+id SERIAL PRIMARY KEY,
+
+nome VARCHAR(50) NOT NULL
+
+);
+
+INSERT INTO turmas (nome)
+VALUES
+('TDS1'),
+('TDS2'),
+('TDS3');
+
+CREATE TABLE alunos (
+
+id SERIAL PRIMARY KEY, 
+
+nome VARCHAR(50) NOT NULL,
+
+email VARCHAR(100) NOT NULL UNIQUE
+
+);
+
+INSERT INTO alunos (nome, email)
+VALUES
+('bruno rosa', 'bruno@gmail.com'),
+('jose', 'jose@gmail.com'),
+('tiago', 'tiago@gmail.com'),
+('pedro', 'pedro@gmail.com'),
+('henrique', 'henrique@gmail.com');
+
+SELECT nome FROM curso;
+SELECT nome FROM turmas;
+SELECT * FROM alunos;
+
+---
+
+
+
+
+**DESAFIO:**
+
+CREATE TABLE cliente (
+id SERIAL PRIMARY KEY,
+nome VARCHAR(50) NOT NULL,
+email VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE pedido (
+id SERIAL PRIMARY KEY,
+nome VARCHAR (50) NOT NULL,
+descricao VARCHAR(100),
+valor DECIMAL(6,2) NOT NULL,
+id_cliente INT NOT NULL,
+CONSTRAINT fk_pedido_cliente
+FOREIGN KEY (id_cliente) REFERENCES cliente(id)
+);
+
+INSERT INTO cliente (nome, email)
+VALUES
+('cliente_1', 'email1@gmail.com'), ('cliente_2', 'email2@gmail.com'), ('cliente_3', 'email3@gmail.com');
+
+INSERT INTO pedido (nome, descricao, valor, id_cliente)
+VALUES
+('camisa do brasil', 'camisa da copa do mundo de 2026', '500.00', 2),
+('moleton', 'azul escuro', '300.00', 2),
+('camisa azul do gremio', 'camisa masculina', '2000.00', 3),
+('calca de inverno', 'tecido premium', '500.00', 4),
+('bone', 'para usar na praia', '100.00', 4);
+
+SELECT * FROM cliente;
+SELECT * FROM pedido;
