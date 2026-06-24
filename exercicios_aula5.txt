@@ -1,0 +1,79 @@
+**Exercicio 1 :**
+
+SELECT * FROM alunos;
+
+UPDATE alunos
+SET nome = 'joao'
+WHERE id = 1;
+
+UPDATE alunos
+SET nome = 'Fernando'
+WHERE id = 7
+
+SELECT * FROM turmas;
+UPDATE turmas
+SET nome = 'TDS26-1N - noite'
+WHERE id = 1
+
+**Exercicio 2:**
+
+DELETE FROM alunos
+WHERE id = 2;
+
+DELETE FROM disciplinas
+WHERE id = 1;
+
+**Exercicio 3:**
+
+SELECT * FROM alunos_turmas WHERE id_turma = 1;
+
+SELECT * FROM alunos_turmas WHERE id > 2;
+
+**Exercicio 4:**
+
+SELECT * FROM alunos
+ORDER BY nome ASC;
+
+SELECT * FROM alunos
+LIMIT 3;
+
+
+
+
+**DESAFIO:** 
+
+1- 
+
+UPDATE alunos
+SET nome = 'claudio', email = 'claudio@gmail.com'
+WHERE id = 1
+
+UPDATE alunos
+SET nome = 'frederico', email = 'frederico@gmail.com'
+WHERE id = 4
+
+2-
+
+UPDATE alunos_turmas
+SET id_aluno = 2, id_turma = 3
+WHERE id = 1
+
+3-
+
+DELETE FROM alunos
+WHERE id = 1
+
+4-
+
+SELECT * FROM alunos
+ORDER BY nome DESC;
+
+5-
+
+ORDER BY id ASC
+LIMIT 2;
+
+6-
+
+SELECT * FROM alunos_turmas
+WHERE id_turma = 1;
