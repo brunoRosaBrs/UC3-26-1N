@@ -1,0 +1,157 @@
+
+--EXERCICIO 1
+--01
+UPDATE produto 
+SET preco = 3699.90
+WHERE id = 1
+
+--02
+UPDATE produto
+SET preco = 129.90, estoque = 20
+WHERE id = 2
+
+--03
+UPDATE produto
+SET categoria_id = 2
+WHERE id = 8
+
+
+-- EXERCICIO 2
+--01
+UPDATE cliente
+SET cidade = 'Sapucaia do Sul'
+WHERE id = 1
+
+--02
+UPDATE cliente
+SET email = 'bruno.lima@email.com'
+WHERE id = 2 
+
+--03
+UPDATE pedido
+SET status = 'Enviado'
+WHERE id = 4
+
+--EXERCICIO 3
+--01
+DELETE FROM produto
+WHERE id = 9
+
+--02
+DELETE FROM pedido
+WHERE id = 8
+
+DELETE FROM cliente
+WHERE id = 8
+
+--03
+DELETE FROM pedido
+WHERE status = 'Cancelado';
+
+--EXERCICIO 4
+--01
+SELECT * FROM produto
+WHERE estoque <10;
+
+--02
+SELECT * FROM produto
+WHERE preco >500;
+
+--03
+SELECT * FROM cliente
+WHERE cidade = 'Porto Alegre';
+
+--4
+SELECT * FROM pedido
+WHERE status = 'Pago';
+
+--EXERCICIO 5
+--01
+SELECT * FROM produto
+ORDER BY nome ASC;
+
+--02
+SELECT * FROM produto
+ORDER BY preco DESC;
+
+--03
+SELECT * FROM cliente 
+ORDER BY nome DESC;
+
+--04
+SELECT * FROM pedido
+ORDER BY data_pedido ASC;
+
+--EXERCICIO 6
+--01
+SELECT * FROM produto
+LIMIT 3;
+
+--02
+SELECT * FROM cliente
+LIMIT 5;
+
+--3
+SELECT * FROM pedido
+ORDER BY valor_total DESC
+LIMIT 2;
+
+--EXERCICIO 7
+--01
+SELECT * FROM produto
+WHERE estoque < 15
+ORDER BY estoque ASC;
+
+--02
+SELECT * FROM pedido
+WHERE valor_total > 300
+ORDER BY valor_total DESC;
+
+--03
+SELECT * FROM produto
+WHERE categoria_id = 1
+ORDER BY nome ASC;
+
+--DESAFIO
+--01
+UPDATE produto
+SET preco = 289.90
+WHERE id = 5
+SELECT * FROM produto
+
+--02
+UPDATE produto
+SET estoque = 6
+WHERE id = 10
+
+--03
+UPDATE cliente
+SET cidade = 'São Leopoldo'
+WHERE id = 6
+
+--4
+INSERT INTO pedido (id, data_pedido, valor_total, status, cliente_id) 
+VALUES
+(6, '2026-06-08', 220.00, 'Cancelado', 6);
+
+UPDATE pedido
+SET status = 'Pago'
+WHERE id = 6;
+
+--5
+DELETE FROM produto
+WHERE id = 7;
+
+--06
+-- Todos os produtos em ordem decrescente de preço:
+SELECT * FROM produto
+ORDER BY preco DESC;
+
+-- Os pedidos com valor maior que 300;
+SELECT * FROM pedido
+WHERE valor_total > 300;
+
+-- Os 5 primeiros clientes em ordem alfabética:
+SELECT * FROM cliente
+ORDER BY nome ASC
+LIMIT 5;
