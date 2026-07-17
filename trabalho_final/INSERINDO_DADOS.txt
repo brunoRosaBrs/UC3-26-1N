@@ -1,0 +1,70 @@
+# INSERINDO DADOS
+
+-- INSERINDO OS JOGOS
+INSERT INTO jogo (nome)
+VALUES ('Super Mario Kart'),
+('Street Fighter Alpha 2'),
+(’Bomberman 5’),
+(’ULTIMATE MORTAL KOMBAT 3’);
+
+
+
+-- INSERINDO AS EQUIPES
+INSERT INTO equipe (nome)
+VALUES	('SQL POWER'),
+('BOMBINHAS'),
+('EMANUGO!'),
+('CODEX-TRO'),
+('SELECT PLAYERS'),
+('SO RESENHA');
+
+
+
+
+-- INSERINDO CAMPEONATOS
+INSERT INTO campeonato (nome, data_campeonato)
+VALUES	('Copa Super Mario Kart', '13/07/2026'),
+('Copa Street Fighter Alpha 2', '14/07/2026'),
+('Copa Bomberman 5', '14/07/2026'),
+('Copa Ultimate mortal kombat 3', '15/07/2026');
+
+
+
+
+
+
+-- INSERINDO DADOS PARTIDA
+INSERT INTO partida (campeonato_id, jogo_id, data_partida, rodada)
+VALUES	(1, 1, '13/07/2026', 'fase de grupos'),
+(1, 1, '14/07/2026', 'fase de grupos'),
+(1, 1, '14/07/2026', 'Semifinais'),
+(1, 1, '14/07/2026', 'final')
+(2, 2, '14/07/2026', 'fase de grupos')
+(2, 2, '14/07/2026', 'Semifinais'),
+(2, 2, '14/07/2026', 'final'),
+(3, 3, '14/07/2026', 'fase de grupos'),
+(3, 3, '15/07/2026', 'fase de grupos'),
+(3, 3, '15/07/2026', 'Semifinais'),
+(3, 3, '15/07/2026', 'final'),
+(4, 4, '15/07/2026', 'fase de grupos'),
+(4, 4, '15/07/2026', 'Semifinais'),
+(4, 4, '15/07/2026', 'final');
+
+
+
+--INSERINDO DADOS DOS JOGADORES
+INSERT INTO jogador (nome, equipe_id)
+VALUES ('
+
+
+
+
+
+
+
+
+
+
+
+
+
