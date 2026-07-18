@@ -1,0 +1,218 @@
+--INSERINDO DADOS
+
+-- INSERINDO OS JOGOS
+INSERT INTO jogo (nome)
+VALUES ('Super Mario Kart'),
+('Street Fighter Alpha 2'),
+('Bomberman 5'),
+('ULTIMATE MORTAL KOMBAT 3');
+
+
+
+-- INSERINDO AS EQUIPES
+INSERT INTO equipe (nome)
+VALUES	('SQL POWER'),
+('BOMBINHAS'),
+('EMANUGO!'),
+('CODEX-TRO'),
+('SELECT PLAYERS'),
+('SO RESENHA');
+
+
+
+
+-- INSERINDO CAMPEONATOS
+INSERT INTO campeonato (nome, data_campeonato)
+VALUES	('Copa Super Mario Kart', '2026/07/13'),
+('Copa Street Fighter Alpha 2', '2026/07/14'),
+('Copa Bomberman 5', '2026/07/14'),
+('Copa Ultimate mortal kombat 3', '2026/07/15');
+
+
+
+
+
+
+-- INSERINDO DADOS PARTIDA
+INSERT INTO partida (campeonato_id, jogo_id, data_partida, rodada)
+VALUES	(1, 1, '2026/07/13', 'fase de grupos'),
+(1, 1, '2026/07/13', 'fase de grupos'),
+(1, 1, '2026/07/13', 'fase de grupos'),
+(1, 1, '2026/07/14', 'fase de grupos'),
+(1, 1, '2026/07/14', 'fase de grupos'),
+(1, 1, '2026/07/14', 'fase de grupos'),
+(1, 1, '2026/07/14', 'fase de grupos'),
+(1, 1, '2026/07/14', 'fase de grupos'),
+(1, 1, '2026/07/14', 'fase de grupos'),
+(1, 1, '2026/07/14', 'semifinal'),
+(1, 1, '2026/07/14', 'semifinal'),
+(1, 1, '2026/07/14', 'final'),
+(2, 2, '2026/07/14', 'fase de grupos'),
+(2, 2, '2026/07/14', 'fase de grupos'),
+(2, 2, '2026/07/14', 'fase de grupos'),
+(2, 2, '2026/07/14', 'fase de grupos'),
+(2, 2, '2026/07/14', 'fase de grupos'),
+(2, 2, '2026/07/14', 'fase de grupos'),
+(2, 2, '2026/07/14', 'fase de grupos'),
+(2, 2, '2026/07/14', 'semifinal'),
+(2, 2, '2026/07/14', 'semifinal'),
+(2, 2, '2026/07/14', 'final'),
+(3, 3, '2026/07/14', 'fase de grupos'),
+(3, 3, '2026/07/14', 'fase de grupos'),
+(3, 3, '2026/07/14', 'fase de grupos'),
+(3, 3, '2026/07/15', 'fase de grupos'),
+(3, 3, '2026/07/15', 'fase de grupos'),
+(3, 3, '2026/07/15', 'fase de grupos'),
+(3, 3, '2026/07/15', 'semifinal'),
+(3, 3, '2026/07/15', 'semifinal'),
+(3, 3, '2026/07/15', 'final'),
+(4, 4, '2026/07/15', 'fase de grupos'),
+(4, 4, '2026/07/15', 'fase de grupos'),
+(4, 4, '2026/07/15', 'fase de grupos'),
+(4, 4, '2026/07/15', 'fase de grupos'),
+(4, 4, '2026/07/15', 'fase de grupos'),
+(4, 4, '2026/07/15', 'fase de grupos'),
+(4, 4, '2026/07/15', 'fase de grupos'),
+(4, 4, '2026/07/15', 'fase de grupos'),
+(4, 4, '2026/07/15', 'semifinal'),
+(4, 4, '2026/07/15', 'semifinal'),
+(4, 4, '2026/07/15', 'final');
+
+
+
+
+
+
+--INSERINDO DADOS DOS JOGADORES
+INSERT INTO jogador (nome, equipe_id)
+VALUES ('Erick Fernando', 1),
+('Dionatan', 5),
+('Alison', 6),
+('Antony', 3),
+('Tomas', 4),
+('Vitor', 2),
+('Rafael Fofonka', 1),
+('Arthur', 2),
+('Rafael Ramos', 1),
+('William', 4),
+('Juliana', 6),
+('Vinicius', 5),
+('Bianca', 6),
+('Emanuel', 3),
+('Lohan', 2),
+('Erick Emanugo!', 3),
+('Bruno Rosa', 5),
+('Bruno Codextro', 4),
+('Marcia', 6),
+('Silvio', 5),
+('Wellington', 1);
+
+
+
+
+
+--INSERINDO DADOS TABELA PARTICIPACOES
+INSERT INTO participacoes (partida_id, jogador_id, pontuacao)
+VALUES (1, 1, 5),
+(1, 2, 0),
+(2, 3, 0),
+(2, 4, 5),
+(3, 5, 0),
+(3, 6, 5),
+(4, 7, 0),
+(4, 4, 5),
+(5, 4, 0),
+(5, 8, 5),
+(6, 6, 5),
+(6, 9, 0),
+(7, 10, 5),
+(7, 11, 0),
+(8, 10, 5),
+(8, 12, 0),
+(9, 12, 0),
+(9, 13, 5),
+(10, 6, 0),
+(10, 11, 10),
+(11, 10, 10),
+(11, 14, 0),
+(12, 10, 25),
+(12, 11, 50),
+(13, 15, 5),
+(13, 2, 0),
+(14, 16, 5),
+(14, 17, 0),
+(15, 16, 0),
+(15, 8, 5),
+(16, 7, 5),
+(16, 3, 0),
+(17, 7, 5),
+(17, 18, 0),
+(18, 10, 5),
+(18, 19, 0),
+(19, 10, 0),
+(19, 15, 5),
+(20, 7, 10),
+(20, 14, 0),
+(21, 15, 10),
+(21, 10, 0),
+(22, 7, 50),
+(22, 15, 25),
+(23, 14, 5),
+(23, 20, 0),
+(24, 14, 5),
+(24, 5, 0),
+(25, 17, 0),
+(25, 10, 5),
+(26, 21, 0),
+(26, 8, 5),
+(27, 3, 0),
+(27, 8, 5),
+(28, 3, 5),
+(28, 9, 0),
+(29, 14, 0),
+(29, 3, 10),
+(30, 5, 5),
+(30, 8, 0),
+(31, 5, 50),
+(31, 3, 25),
+(32, 21, 5),
+(32, 11, 0),
+(33, 21, 0),
+(33, 11, 5),
+(34, 9, 5),
+(34, 10, 0),
+(35, 10, 5),
+(35, 3, 0),
+(36, 14, 5),
+(36, 15, 0),
+(37, 14, 5),
+(37, 12, 0),
+(38, 15, 0),
+(38, 12, 5),
+(39, 15, 0),
+(39, 12, 5),
+(40, 21, 0),
+(40, 12, 10),
+(41, 10, 0),
+(41, 14, 10),
+(42, 12, 25),
+(42, 14, 50);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
