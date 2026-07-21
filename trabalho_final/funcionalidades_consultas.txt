@@ -13,26 +13,22 @@ ORDER BY e.nome, j.nome;
 -- 2. Quais partidas foram disputadas?
 
 SELECT
+	p.id AS partida,
     j.nome AS jogo,
     p.data_partida AS data,
     p.rodada,
-    STRING_AGG(jog.nome, ' x ' ORDER BY pa.id) AS participantes,
-    STRING_AGG(pa.pontuacao::TEXT, ' x ' ORDER BY pa.id) AS pontuacao
-FROM partida p
-INNER JOIN jogo j
-    ON p.jogo_id = j.id
-INNER JOIN participacoes pa
-    ON p.id = pa.partida_id
+    jog.nome AS participante,
+    pa.pontuacao
+FROM participacoes pa
 INNER JOIN jogador jog
     ON pa.jogador_id = jog.id
-GROUP BY
-    p.id,
-    j.nome,
-    p.data_partida,
-    p.rodada
+INNER JOIN partida p
+    ON pa.partida_id = p.id
+INNER JOIN jogo j
+    ON p.jogo_id = j.id
 ORDER BY
-    p.data_partida,
-    p.id;
+    p.id,
+    pa.pontuacao DESC;
 
 
 
